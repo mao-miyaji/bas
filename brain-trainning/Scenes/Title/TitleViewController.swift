@@ -21,9 +21,29 @@ class TitleViewController: BaseViewController, TitleDisplayLogic
     var interactor: TitleBusinessLogic?
     var router: (NSObjectProtocol & TitleRoutingLogic & TitleDataPassing)?
 
-    let titleLabel: UILabel = UILabel()
-    let navigateLabel: UILabel = UILabel()
-    let logoBrainImageView: UIImageView = UIImageView(image: UIImage(named: "logo_brain"))
+    let titleLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Brain Training"
+        label.textAlignment = .center
+        label.textColor = UIColor.black
+        label.font = UIFont.boldSystemFont(ofSize: 24.0)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    let navigateLabel: UILabel = {
+        let label = UILabel()
+        label.text = "TAP TO START"
+        label.font = UIFont.boldSystemFont(ofSize: 20.0)
+        // ColorAsset (iOS 11.0 以上対応)
+        label.textColor = UIColor(named: "textGray")
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    let logoBrainImageView: UIImageView = {
+        let imageView = UIImageView(image: UIImage(named: "logo_brain"))
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
     
     // MARK: Object lifecycle
     
@@ -104,7 +124,6 @@ class TitleViewController: BaseViewController, TitleDisplayLogic
         hover.repeatCount = Float.infinity
         logoBrainImageView.layer.add(hover, forKey: "myHoverAnimation")
 
-        logoBrainImageView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(logoBrainImageView)
 
         let widthConstraint = NSLayoutConstraint(item: logoBrainImageView, attribute: .width, relatedBy: .equal,
@@ -122,11 +141,6 @@ class TitleViewController: BaseViewController, TitleDisplayLogic
     // MARK: Setting titleLabel
     private func setTitleLabel()
     {
-        titleLabel.text = "Brain Training"
-        titleLabel.textAlignment = .center
-        titleLabel.textColor = UIColor.black
-        titleLabel.font = UIFont.boldSystemFont(ofSize: 24.0)
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
         // 影をつける
         titleLabel.layer.shadowColor = UIColor.gray.cgColor
         titleLabel.layer.shadowRadius = 3.0
@@ -146,11 +160,6 @@ class TitleViewController: BaseViewController, TitleDisplayLogic
     // MARK: Setting navigateLabel
     private func setNavigateLabel()
     {
-        navigateLabel.text = "TAP TO START"
-        navigateLabel.font = UIFont.boldSystemFont(ofSize: 20.0)
-        // ColorAsset (iOS 11.0 以上対応)
-        navigateLabel.textColor = UIColor(named: "textGray")
-        navigateLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(navigateLabel)
 
         let xConstraint = NSLayoutConstraint(item: navigateLabel, attribute: .centerX, relatedBy: .equal,

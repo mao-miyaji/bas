@@ -21,6 +21,15 @@ class HomeViewController: BaseViewController, HomeDisplayLogic
     var interactor: HomeBusinessLogic?
     var router: (NSObjectProtocol & HomeRoutingLogic & HomeDataPassing)?
 
+    let continueLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Sorry...\nContinue to Next Chapter!"
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     // MARK: Object lifecycle
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
@@ -69,15 +78,10 @@ class HomeViewController: BaseViewController, HomeDisplayLogic
     {
         super.viewDidLoad()
 
-        let label = UILabel()
-        label.text = "Sorry...\nContinue to Next Chapter!"
-        label.numberOfLines = 0
-        label.textAlignment = .center
-        label.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(label)
-        let xConstraint = NSLayoutConstraint(item: label, attribute: .centerX, relatedBy: .equal,
+        view.addSubview(continueLabel)
+        let xConstraint = NSLayoutConstraint(item: continueLabel, attribute: .centerX, relatedBy: .equal,
                                              toItem: view, attribute: .centerX, multiplier: 1, constant: 0)
-        let yConstraint = NSLayoutConstraint(item: label, attribute: .centerY, relatedBy: .equal,
+        let yConstraint = NSLayoutConstraint(item: continueLabel, attribute: .centerY, relatedBy: .equal,
                                              toItem: view, attribute: .centerY, multiplier: 1, constant: 0)
         
         NSLayoutConstraint.activate([xConstraint, yConstraint])
