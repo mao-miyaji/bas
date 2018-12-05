@@ -6,6 +6,7 @@ Swift DE 脳トレアプリ - Brain training App with Swift
 
 2018.11.30時点
 
+|  | version |
 | :--- | :--- |
 | MacOS | High Sierra 10.13.6 |
 | Swift | 4.2.1 |
