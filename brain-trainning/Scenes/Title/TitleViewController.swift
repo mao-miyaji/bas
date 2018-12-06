@@ -26,14 +26,15 @@ class TitleViewController: BaseViewController, TitleDisplayLogic
         label.text = "Brain Training"
         label.textAlignment = .center
         label.textColor = UIColor.black
-        label.font = UIFont.boldSystemFont(ofSize: 24.0)
+        label.font = UIFont.systemFont(ofSize: 24.0, weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     let navigateLabel: UILabel = {
         let label = UILabel()
         label.text = "TAP TO START"
-        label.font = UIFont.boldSystemFont(ofSize: 20.0)
+        label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: 20.0, weight: .bold)
         // ColorAsset (iOS 11.0 以上対応)
         label.textColor = UIColor(named: "textGray")
         label.translatesAutoresizingMaskIntoConstraints = false
