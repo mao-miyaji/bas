@@ -27,7 +27,6 @@
         <!--Home View Controller-->
         <scene sceneID="MKj-wC-Ts9">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Yo4-tn-bpg" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="HomeViewController" id="gMc-ME-k5w" customClass="HomeViewController" customModule="brain_trainning" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pXV-eA-NlN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
@@ -36,8 +35,24 @@
                         <viewLayoutGuide key="safeArea" id="0Oz-mc-Rt7"/>
                     </view>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yo4-tn-bpg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1191" y="23"/>
+            <point key="canvasLocation" x="1004" y="117"/>
+        </scene>
+        <!--Training List View Controller-->
+        <scene sceneID="P2c-dN-qSs">
+            <objects>
+                <viewController storyboardIdentifier="TrainingListViewController" id="Xtp-hI-pdZ" customClass="TrainingListViewController" customModule="brain_trainning" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bev-YR-Pj9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="o7Q-eJ-EG8"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GNt-7d-yhX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1919" y="117"/>
         </scene>
     </scenes>
 </document>

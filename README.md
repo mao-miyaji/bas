@@ -20,3 +20,4 @@ Swift DE 脳トレアプリ - Brain training App with Swift
 | :--- | :--- | :--- |
 | 序章 | プロジェクト作成から表示させるまで | [prologue](https://github.com/mao-miyaji/bas/tree/prologue) |
 | 1 | タイトル画面を作っていこう | [1st](https://github.com/mao-miyaji/bas/tree/1st)
+| 2 | トップ画面を作っていこう (1) | [2nd](https://github.com/mao-miyaji/bas/tree/2nd)

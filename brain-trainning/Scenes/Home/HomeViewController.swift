@@ -21,13 +21,24 @@ class HomeViewController: BaseViewController, HomeDisplayLogic
     var interactor: HomeBusinessLogic?
     var router: (NSObjectProtocol & HomeRoutingLogic & HomeDataPassing)?
 
-    let continueLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Sorry...\nContinue to Next Chapter!"
-        label.numberOfLines = 0
-        label.textAlignment = .center
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
+    let margin: CGFloat = 20
+
+    let containerView: UIView = {
+        let view = UIView()
+        view.layer.backgroundColor = UIColor.clear.cgColor
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    let startButton: UIButton = {
+        let button = UIButton()
+        let image = UIImage(named: "button_start")
+        button.setImage(image, for: .normal)
+        button.imageView?.contentMode = .scaleAspectFit
+        button.contentHorizontalAlignment = .fill
+        button.contentVerticalAlignment = .fill
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
     }()
     
     // MARK: Object lifecycle
@@ -71,20 +82,32 @@ class HomeViewController: BaseViewController, HomeDisplayLogic
             }
         }
     }
-    
+
+    @objc func routeToTrainingList(_ sender: UIButton)
+    {
+        router?.routeToTrainingList(segue: nil)
+    }
+
     // MARK: View lifecycle
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
 
-        view.addSubview(continueLabel)
-        let xConstraint = NSLayoutConstraint(item: continueLabel, attribute: .centerX, relatedBy: .equal,
-                                             toItem: view, attribute: .centerX, multiplier: 1, constant: 0)
-        let yConstraint = NSLayoutConstraint(item: continueLabel, attribute: .centerY, relatedBy: .equal,
-                                             toItem: view, attribute: .centerY, multiplier: 1, constant: 0)
+        startButton.addTarget(self, action: #selector(routeToTrainingList), for: .touchUpInside)
+        containerView.addSubview(startButton)
+
+        startButton.leadingAnchor.constraint(equalTo: containerView.leadingAnchor).isActive = true
+        startButton.bottomAnchor.constraint(equalTo: containerView.bottomAnchor).isActive = true
+        startButton.heightAnchor.constraint(equalToConstant: 126.0).isActive = true
+        startButton.widthAnchor.constraint(equalToConstant: 126.0).isActive = true
         
-        NSLayoutConstraint.activate([xConstraint, yConstraint])
+        view.addSubview(containerView)
+
+        containerView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: margin).isActive = true
+        containerView.topAnchor.constraint(equalTo: view.topAnchor, constant: margin).isActive = true
+        containerView.heightAnchor.constraint(equalToConstant: view.frame.height - 50 - margin).isActive = true
+        containerView.widthAnchor.constraint(equalToConstant: view.frame.width - (margin * 2)).isActive = true
     }
     
 }
