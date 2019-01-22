@@ -47,7 +47,10 @@ class HomeRouter: NSObject, HomeRoutingLogic, HomeDataPassing
     
     func navigateToTrainingList(source: HomeViewController, destination: TrainingListViewController)
     {
-        source.show(destination, sender: nil)
+        // Loading表示するために遅延処理
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
+            source.show(destination, sender: nil)
+        }
     }
 
     // MARK: Passing data

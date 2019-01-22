@@ -90,7 +90,7 @@ class TitleViewController: BaseViewController, TitleDisplayLogic
 
     func routeToHome()
     {
-        print("route to Home")
+        doLoading()
         router?.routeToHome(segue: nil)
     }
     

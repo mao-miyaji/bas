@@ -12,6 +12,26 @@ class BaseViewController: UIViewController
 {
     let gradientLayer = GradientLayer()
     let footerMenuView = FooterMenuView()
+    let loaderView = LoaderView()
+    var isLoading: Bool = false
+
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
+    {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
+    }
+
+    required init?(coder aDecoder: NSCoder)
+    {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    // MARK: Setup
+    private func setup()
+    {
+        modalTransitionStyle = .crossDissolve
+    }
 
     override func viewDidLoad()
     {
@@ -20,6 +40,12 @@ class BaseViewController: UIViewController
         gradientLayer.frame = view.bounds
         gradientLayer.colors = [UIColor.white.cgColor, UIColor(red: 221 / 255.0, green: 221 / 255.0, blue: 221 / 255.0, alpha: 1).cgColor]
         view.layer.addSublayer(gradientLayer)
+
+        view.addSubview(loaderView)
+        loaderView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+        loaderView.heightAnchor.constraint(equalTo: view.heightAnchor).isActive = true
+        loaderView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        loaderView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator)
@@ -39,4 +65,10 @@ class BaseViewController: UIViewController
         footerMenuView.widthAnchor.constraint(equalToConstant: view.frame.width)
     }
     
+    // MARK: Do Loading
+    func doLoading()
+    {
+        loaderView.fadeIn()
+        isLoading = true
+    }
 }

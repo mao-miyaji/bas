@@ -85,6 +85,7 @@ class HomeViewController: BaseViewController, HomeDisplayLogic
 
     @objc func routeToTrainingList(_ sender: UIButton)
     {
+        doLoading()
         router?.routeToTrainingList(segue: nil)
     }
 
