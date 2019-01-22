@@ -36,7 +36,7 @@ class TitleViewController: BaseViewController, TitleDisplayLogic
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 20.0, weight: .bold)
         // ColorAsset (iOS 11.0 以上対応)
-        label.textColor = UIColor(named: "textGray")
+        label.textColor = UIColor(named: "basGray")
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -90,7 +90,7 @@ class TitleViewController: BaseViewController, TitleDisplayLogic
 
     func routeToHome()
     {
-        print("route to Home")
+        doLoading()
         router?.routeToHome(segue: nil)
     }
     

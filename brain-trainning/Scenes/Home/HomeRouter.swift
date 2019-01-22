@@ -14,6 +14,7 @@ import UIKit
 
 @objc protocol HomeRoutingLogic
 {
+    func routeToTrainingList(segue: UIStoryboardSegue?)
 }
 
 protocol HomeDataPassing
@@ -28,8 +29,34 @@ class HomeRouter: NSObject, HomeRoutingLogic, HomeDataPassing
     
     // MARK: Routing
 
+    func routeToTrainingList(segue: UIStoryboardSegue?)
+    {
+        if let segue = segue {
+            let destinationVC = segue.destination as! TrainingListViewController
+            var destinationDS = destinationVC.router!.dataStore!
+            passDataToTrainingList(source: dataStore!, destination: &destinationDS)
+        } else {
+            let destinationVC = viewController?.storyboard?.instantiateViewController(withIdentifier: "TrainingListViewController") as! TrainingListViewController
+            var destinationDS = destinationVC.router!.dataStore!
+            passDataToTrainingList(source: dataStore!, destination: &destinationDS)
+            navigateToTrainingList(source: viewController!, destination: destinationVC)
+        }
+    }
+
     // MARK: Navigation
     
+    func navigateToTrainingList(source: HomeViewController, destination: TrainingListViewController)
+    {
+        // Loading表示するために遅延処理
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) {
+            source.show(destination, sender: nil)
+        }
+    }
+
     // MARK: Passing data
     
+    func passDataToTrainingList(source: HomeDataStore, destination: inout TrainingListDataStore)
+    {
+        // pass data to destination
+    }
 }
