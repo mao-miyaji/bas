@@ -12,12 +12,15 @@
 		65445843219538DF00ECBDC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65445842219538DF00ECBDC2 /* Assets.xcassets */; };
 		65445846219538DF00ECBDC2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65445844219538DF00ECBDC2 /* LaunchScreen.storyboard */; };
 		65445851219538DF00ECBDC2 /* brain_trainningUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65445850219538DF00ECBDC2 /* brain_trainningUITests.swift */; };
+		65546FD821F0372B00C0E2CC /* UIBezierPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65546FD721F0372B00C0E2CC /* UIBezierPath.swift */; };
+		65546FE021F04F0600C0E2CC /* BeveledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65546FDF21F04F0600C0E2CC /* BeveledButton.swift */; };
 		654845AF21F168D900D1F9E1 /* TrainingListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654845A921F168D900D1F9E1 /* TrainingListPresenter.swift */; };
 		654845B021F168D900D1F9E1 /* TrainingListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654845AA21F168D900D1F9E1 /* TrainingListWorker.swift */; };
 		654845B121F168D900D1F9E1 /* TrainingListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654845AB21F168D900D1F9E1 /* TrainingListRouter.swift */; };
 		654845B221F168D900D1F9E1 /* TrainingListModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654845AC21F168D900D1F9E1 /* TrainingListModels.swift */; };
 		654845B321F168D900D1F9E1 /* TrainingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654845AD21F168D900D1F9E1 /* TrainingListViewController.swift */; };
 		654845B421F168D900D1F9E1 /* TrainingListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654845AE21F168D900D1F9E1 /* TrainingListInteractor.swift */; };
+		654845BA21F1815A00D1F9E1 /* FooterMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654845B921F1815A00D1F9E1 /* FooterMenuView.swift */; };
 		657E07EC21B6193B005D1B62 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657E07EB21B6193B005D1B62 /* BaseViewController.swift */; };
 		657E07EE21B619EE005D1B62 /* GradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657E07ED21B619EE005D1B62 /* GradientLayer.swift */; };
 		657E080521B6754D005D1B62 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657E07FF21B6754D005D1B62 /* HomePresenter.swift */; };
@@ -60,6 +63,9 @@
 		654845AC21F168D900D1F9E1 /* TrainingListModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TrainingListModels.swift; path = TrainingList/TrainingListModels.swift; sourceTree = "<group>"; };
 		654845AD21F168D900D1F9E1 /* TrainingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TrainingListViewController.swift; path = TrainingList/TrainingListViewController.swift; sourceTree = "<group>"; };
 		654845AE21F168D900D1F9E1 /* TrainingListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TrainingListInteractor.swift; path = TrainingList/TrainingListInteractor.swift; sourceTree = "<group>"; };
+		65546FD721F0372B00C0E2CC /* UIBezierPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBezierPath.swift; sourceTree = "<group>"; };
+		65546FDF21F04F0600C0E2CC /* BeveledButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeveledButton.swift; sourceTree = "<group>"; };
+		654845B921F1815A00D1F9E1 /* FooterMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterMenuView.swift; sourceTree = "<group>"; };
 		657E07EB21B6193B005D1B62 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		657E07ED21B619EE005D1B62 /* GradientLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientLayer.swift; sourceTree = "<group>"; };
 		657E07FF21B6754D005D1B62 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
@@ -175,7 +181,10 @@
 			isa = PBXGroup;
 			children = (
 				657E07EB21B6193B005D1B62 /* BaseViewController.swift */,
+				65546FDF21F04F0600C0E2CC /* BeveledButton.swift */,
 				657E07ED21B619EE005D1B62 /* GradientLayer.swift */,
+				654845B921F1815A00D1F9E1 /* FooterMenuView.swift */,
+				65546FD721F0372B00C0E2CC /* UIBezierPath.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -296,9 +305,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65546FD821F0372B00C0E2CC /* UIBezierPath.swift in Sources */,
 				654845B221F168D900D1F9E1 /* TrainingListModels.swift in Sources */,
 				658EC61B21B0EA77003D1AF8 /* TitleModels.swift in Sources */,
 				657E080721B6754D005D1B62 /* HomeRouter.swift in Sources */,
+				65546FE021F04F0600C0E2CC /* BeveledButton.swift in Sources */,
 				658EC61921B0EA77003D1AF8 /* TitleWorker.swift in Sources */,
 				654845B021F168D900D1F9E1 /* TrainingListWorker.swift in Sources */,
 				657E080A21B6754D005D1B62 /* HomeInteractor.swift in Sources */,
@@ -310,6 +321,7 @@
 				657E080621B6754D005D1B62 /* HomeWorker.swift in Sources */,
 				658EC61A21B0EA77003D1AF8 /* TitleRouter.swift in Sources */,
 				654845B421F168D900D1F9E1 /* TrainingListInteractor.swift in Sources */,
+				654845BA21F1815A00D1F9E1 /* FooterMenuView.swift in Sources */,
 				658EC61C21B0EA77003D1AF8 /* TitleViewController.swift in Sources */,
 				658EC61821B0EA77003D1AF8 /* TitlePresenter.swift in Sources */,
 				657E07EC21B6193B005D1B62 /* BaseViewController.swift in Sources */,

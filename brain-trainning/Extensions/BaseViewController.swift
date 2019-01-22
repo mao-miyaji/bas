@@ -11,7 +11,8 @@ import UIKit
 class BaseViewController: UIViewController
 {
     let gradientLayer = GradientLayer()
-    
+    let footerMenuView = FooterMenuView()
+
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -25,6 +26,17 @@ class BaseViewController: UIViewController
     {
         super.viewWillTransition(to: size, with: coordinator)
         gradientLayer.frame = CGRect(x: 0, y: 0, width: size.width, height: size.height)
+    }
+
+    func setFooterMenu()
+    {
+        footerMenuView.frame = CGRect(x: 0, y: view.frame.height - footerMenuView.height, width: view.frame.width, height: footerMenuView.height)
+        footerMenuView.setup()
+        view.addSubview(footerMenuView)
+        footerMenuView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        footerMenuView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        footerMenuView.heightAnchor.constraint(equalToConstant: footerMenuView.height)
+        footerMenuView.widthAnchor.constraint(equalToConstant: view.frame.width)
     }
     
 }

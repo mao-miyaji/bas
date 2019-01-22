@@ -94,6 +94,8 @@ class HomeViewController: BaseViewController, HomeDisplayLogic
     {
         super.viewDidLoad()
 
+        setFooterMenu()
+
         startButton.addTarget(self, action: #selector(routeToTrainingList), for: .touchUpInside)
         containerView.addSubview(startButton)
 
@@ -106,7 +108,7 @@ class HomeViewController: BaseViewController, HomeDisplayLogic
 
         containerView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: margin).isActive = true
         containerView.topAnchor.constraint(equalTo: view.topAnchor, constant: margin).isActive = true
-        containerView.heightAnchor.constraint(equalToConstant: view.frame.height - 50 - margin).isActive = true
+        containerView.heightAnchor.constraint(equalToConstant: view.frame.height - 50 - margin - footerMenuView.frame.height).isActive = true
         containerView.widthAnchor.constraint(equalToConstant: view.frame.width - (margin * 2)).isActive = true
     }
     
